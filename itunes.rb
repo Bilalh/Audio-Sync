@@ -80,22 +80,31 @@ module Sync
 				end
 			end
 		end
-	
+		
+		# returns a new hash with elements of other and self
 		def merge_music(other)
+			nhash = Music.new
 			other.each_pair do |x, o_arist|
-				if  (artist = self[x]) then
-					o_arist.each_pair do |y, o_album|
-						if album = artist[y] then
-							album.add_music! o_album
-						else 
-							artist[y] = o_album.dup
-						end
+				artist = nhash.add_artist x 
+				o_arist.each_pair do |y, o_album|
+					album = artist.add_album y
+					o_album.each_pair do |z, track|
+						album.store z, track
 					end
-					
-				else
-					self[x] = o_arist.dup
 				end
 			end
+			
+			self.each_pair do |x, o_arist|
+				artist = nhash.add_artist x 
+				o_arist.each_pair do |y, o_album|
+					album = artist.add_album y
+					o_album.each_pair do |z, track|
+						album.store z, track
+					end
+				end
+			end
+			
+			return nhash
 		end
 	
 	end
@@ -149,6 +158,7 @@ module Sync
 
 		def save_synced(path="#{@base}/sync.yaml")
 			synced =  @synced.size == 0 ? @music : @synced
+			
 			File.open(path, "w") do |file|
 				file.write(synced.to_yaml)
 			end
@@ -161,24 +171,22 @@ module Sync
 		end
 		
 		def find_unsyced(synced = @synced)
-			
-			puts "osynced" 
-			print_musica synced
-			puts
-			
 			puts "music" 
 			print_musica  @music
 			puts
-			temp = @music.dup.merge_music synced
-
+			
+			temp = @music.merge_music synced
 			@music.minus! synced
+			
 			@synced = temp
 			puts "synced" 
-			print_musica @synced
+			print_musica temp
 			puts
 			
 			puts "new" 
 			print_musica  @music
+			puts
+			
 			return self
 		end
 		
@@ -239,11 +247,10 @@ end
 include Sync 
 
 itunes = Itunes.new
-itunes.make_playlist_data "ar"
+itunes.make_playlist_data "pc [701,2500]"
 itunes.load_synced
 itunes.find_unsyced
-# # itunes.make_m3u
+itunes.make_m3u
 # itunes.print_music
-# itunes.print_music
-# # itunes.write_unsynced
-# itunes.save_synced
+itunes.write_unsynced
+itunes.save_synced
