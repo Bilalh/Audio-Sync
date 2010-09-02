@@ -1,7 +1,6 @@
 #!/usr/local/bin/macruby
 framework 'Cocoa'
 framework 'ScriptingBridge'
-require "set"
 
 class Object
 	def my_methods()
@@ -15,9 +14,8 @@ class SBElementArray
   end
 end
 
+ 
 module Sync
-	framework 'Cocoa'
-	framework 'ScriptingBridge'
 	require 'set'
 	require "yaml"
 	
@@ -28,6 +26,7 @@ module Sync
 		appa.run if run
 		return appa
 	end
+
 
 	class Music < Hash
 		def add_artist(name)
@@ -111,19 +110,7 @@ module Sync
 	
 	class Itunes
 		attr_reader :app, :music, :playlists, :synced
-		
-		def print_musica(hash)
-			hash.each_pair do |name, artist|
-				puts "artist: #{name}"
-				artist.each do |name, album|
-					puts "  album: #{name}"
-					album.each do |track|
-						puts "     #{track[0]}"
-					end
-				end
-			end
-		end
-		
+
 		def initialize(base = File.expand_path("~/Desktop/music_t") )
 			@app       = get_app 'com.apple.itunes','itunes'
 			@base      = base
@@ -135,10 +122,10 @@ module Sync
 		end
 		
 		# Makes the playlist with name
-		def make_playlist_data(name)
+		def make_playlist_data(p_name)
 			
 			ply = "#EXTM3U\n"
-			@playlists[name].tracks.each do |track|
+			@playlists[p_name].tracks.each do |track|
 				url   = track.get.location
 				parts = url.pathComponents
 				name  = parts[-1]; album = parts[-2]; artist = parts[-3]
@@ -152,19 +139,10 @@ module Sync
 				ply << "../#{full}\n"
 			end
 			
-			@m3u[name] = ply
+			@m3u[p_name] = ply
 			return self
 		end
 
-		def save_synced(path="#{@base}/sync.yaml")
-			synced =  @synced.size == 0 ? @music : @synced
-			
-			File.open(path, "w") do |file|
-				file.write(synced.to_yaml)
-			end
-			return self
-		end
-		
 		def load_synced(path="#{@base}/sync.yaml")
 			@synced =  File.open(path){|y| YAML.load(y) }
 			return self
@@ -172,7 +150,7 @@ module Sync
 		
 		def find_unsyced(synced = @synced)
 			puts "music" 
-			print_musica  @music
+			print_music  @music
 			puts
 			
 			temp = @music.merge_music synced
@@ -180,11 +158,11 @@ module Sync
 			
 			@synced = temp
 			puts "synced" 
-			print_musica temp
+			print_music temp
 			puts
 			
 			puts "new" 
-			print_musica  @music
+			print_music  @music
 			puts
 			
 			return self
@@ -196,36 +174,64 @@ module Sync
 				mkdir(ar)
 				artist.each_pair do |al, album|
 					mkdir("#{ar}/#{al}")
-					album.each do |track|
+					album.each do |name, full|
 						puts @file.copyItemAtPath(
-							"/Users/bilalh/Music/iTunes/iTunes Music/" + track[1],
-							toPath:track[1],
+							"/Users/bilalh/Music/iTunes/iTunes Music/" + full,
+							toPath:full,
 							error:nil
 						)
 					end	
 				end
 			end
-			
 			return self
 		end
 	
-		def make_m3u()
+		def save_synced(path="#{@base}/sync.yaml")
+			synced =  @synced.size == 0 ? @music : @synced
+			
+			File.open(path, "w") do |file|
+				file.write(synced.to_yaml)
+			end
+			return self
+		end
+
+		def make_m3u
 			ply = "#EXTM3U\n"
 			@music.each_pair do |ar, artist|
 				artist.each_pair do |al, album|
-					album.each do |track|
-						ply << "#EXTINF:-1,#{track} - #{ar}\n"
-						ply << "../#{ar}/#{al}/#{track}\n"
+					album.each do |name, full|
+						ply << "#EXTINF:-1,#{name} - #{ar}\n"
+						ply << "../#{full}\n"
 					end
 				end
 			end
-			@m3u["Ωnew"] = ply
+			
+			now = Time.now
+			name = sprintf "Ω_%02d_%02d", now.month, now.day
+			@m3u[name] = ply
 			return self
 		end
 		
-		def print_music(music = @music)
-			music.print_music()
-			return self
+		def save_m3us
+			mkdir("playlists")
+			Dir.chdir("#{@base}/playlists")
+			@m3u.each_pair do |name, ply|
+				File.open("#{name}.m3u", "w") do |file|
+					file.write(ply)
+				end
+			end
+		end
+		
+		def print_music(hash = @music)
+			hash.each_pair do |name, artist|
+				puts "artist: #{name}"
+				artist.each do |name, album|
+					puts "  album: #{name}"
+					album.each do |track|
+						puts "     #{track[0]}"
+					end
+				end
+			end
 		end
 		
 		private
@@ -248,9 +254,12 @@ include Sync
 
 itunes = Itunes.new
 itunes.make_playlist_data "pc [701,2500]"
+itunes.make_playlist_data "↑"
 itunes.load_synced
 itunes.find_unsyced
-itunes.make_m3u
 # itunes.print_music
 itunes.write_unsynced
 itunes.save_synced
+itunes.make_m3u
+itunes.save_m3us
+
