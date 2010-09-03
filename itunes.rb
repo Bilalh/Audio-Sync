@@ -175,6 +175,10 @@ module Sync
 			print_music  @music
 			puts
 			
+			puts "delete" 
+			p delete
+			puts
+			
 			return self
 		end
 		
@@ -186,27 +190,25 @@ module Sync
 					artist.each_pair do |al, album|
 						if ( m_al = m_ar[al] ) then
 							album.each do |name, full|
-								delete << full unless m_al[name]
+								
+								unless m_al[name]
+									@delete << full
+									album.delete name
+								end
+								
 							end
 						else 
-							puts "album  #{al} not found"
-							album.each do |name, full|
-								@delete << full
-							end
+							@delete << "#{ar}/#{al}" if ar and al
+							artist.delete al
 						end
 					end
 					
 				else 
-					puts "artist #{ar} not found"
-					artist.each_pair do |al, album|
-						album.each_pair do |name, full|
-							@delete << full
-						end
-					end
+					@delete << "#{ar}" if ar
+					@synced.delete ar
 				end
 				
 			end
-
 			return self
 		end
 		
@@ -217,6 +219,7 @@ module Sync
 				artist.each_pair do |al, album|
 					mkdir("#{ar}/#{al}")
 					album.each do |name, full|
+						print name, " "
 						puts @file.copyItemAtPath(
 							"/Users/bilalh/Music/iTunes/iTunes Music/" + full,
 							toPath:full,
@@ -237,9 +240,14 @@ module Sync
 			return self
 		end
 		
-		
 		def delete_not_found
-		
+			Dir.chdir(@base)
+			@delete.each do |file|
+				@file.removeItemAtPath(
+					file,
+					error:nil
+				);
+			end
 		end
 		
 		def make_new_playlist
@@ -296,20 +304,21 @@ module Sync
 
 end
 
-
 #Main
 include Sync 
 
 itunes = Itunes.new
 itunes.make_playlist_data "pc [701,2500]"
 # itunes.make_playlist_data "↑ "
+
 itunes.load_synced
 itunes.find_not_in_playlist
+itunes.find_unsyced
+itunes.delete_not_found
+itunes.write_unsynced
 
-# itunes.find_unsyced
-# itunes.write_unsynced
-# itunes.save_synced
-# itunes.make_new_playlist
-# itunes.save_m3us
+itunes.save_synced
+itunes.make_new_playlist
+itunes.save_m3us
 
 
