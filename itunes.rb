@@ -114,14 +114,10 @@ module Sync
 			@music     = Music.new
 			@playlists = @app.sources.first.playlists
 			@synced    = Music.new
-			@delete    = []
-			
-			@pnames    = []
-			@psize     = {}
+			@delete    = Array.new
+			@pnames    = Hash.new
 			@playlists.each do |p|
-				name          = p.name
-				@pnames      << name
-				@psize[name]  = p.size
+				@pnames[p.name] = p.size
 			end
 		end
 		
@@ -190,22 +186,24 @@ module Sync
 					artist.each_pair do |al, album|
 						if ( m_al = m_ar[al] ) then
 							album.each do |name, full|
-								
-								unless m_al[name]
+								unless  m_al[name]
 									@delete << full
 									album.delete name
 								end
-								
 							end
 						else 
-							@delete << "#{ar}/#{al}" if ar and al
-							artist.delete al
+							if ar and al then
+								@delete << "#{ar}/#{al}" 
+								artist.delete al
+							end
 						end
 					end
 					
 				else 
-					@delete << "#{ar}" if ar
-					@synced.delete ar
+					if ar then
+						@delete << "#{ar}" 
+						@synced.delete ar
+					end
 				end
 				
 			end
@@ -308,12 +306,15 @@ end
 include Sync 
 
 itunes = Itunes.new
+
 itunes.make_playlist_data "pc [701,2500]"
-# itunes.make_playlist_data "↑ "
+itunes.make_playlist_data "↑ "
 
 itunes.load_synced
 itunes.find_not_in_playlist
 itunes.find_unsyced
+
+# any order 
 itunes.delete_not_found
 itunes.write_unsynced
 
