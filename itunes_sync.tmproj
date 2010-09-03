@@ -22,8 +22,6 @@
 			<key>children</key>
 			<array>
 				<dict>
-					<key>expanded</key>
-					<true/>
 					<key>name</key>
 					<string>music_t</string>
 					<key>regexFolderFilter</key>
@@ -32,54 +30,37 @@
 					<string>../../../Desktop/music_t</string>
 				</dict>
 			</array>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>untitled group</string>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
-	<integer>148</integer>
+	<integer>85</integer>
 	<key>metaData</key>
 	<dict>
-		<key>../../../Desktop/music_t/sync.yaml</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>itunes.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>5</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>93</integer>
+				<integer>16</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>24</integer>
+			<integer>141</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>itunes.rb</string>
-		<string>../../../Desktop/music_t/sync.yaml</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>showFileHierarchyPanel</key>
-	<true/>
+	<false/>
 	<key>treeState</key>
 	<dict>
 		<key>itunes_sync</key>
@@ -89,23 +70,8 @@
 			<key>subItems</key>
 			<dict/>
 		</dict>
-		<key>untitled group</key>
-		<dict>
-			<key>isExpanded</key>
-			<true/>
-			<key>subItems</key>
-			<dict>
-				<key>music_t</key>
-				<dict>
-					<key>isExpanded</key>
-					<true/>
-					<key>subItems</key>
-					<dict/>
-				</dict>
-			</dict>
-		</dict>
 	</dict>
 	<key>windowFrame</key>
-	<string>{{682, 51}, {758, 827}}</string>
+	<string>{{683, 51}, {758, 827}}</string>
 </dict>
 </plist>
