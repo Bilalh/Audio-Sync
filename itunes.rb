@@ -15,11 +15,10 @@ class SBElementArray
   end
 end
 
- 
 module Sync
 	require 'set'
 	require "yaml"
-	
+
 	# gets the app 
 	def get_app(app_id, bridge_name, run = true)
 		appa = SBApplication.applicationWithBundleIdentifier(app_id)
@@ -27,7 +26,6 @@ module Sync
 		appa.run if run
 		return appa
 	end
-
 
 	class Music < Hash
 		def add_artist(name)
@@ -104,18 +102,22 @@ module Sync
 	end
 	
 	class Itunes
-		attr_reader :app,:delete, :music, :playlists, :pnames, :synced
-
+		attr_reader :app,:delete, :music, :playlists, :pnames, :synced, :selected
+		attr_reader :total_size, :old_size, :base
+		
 		def initialize(base = File.expand_path("~/Desktop/music_t") )
-			@app       = get_app 'com.apple.itunes','itunes'
-			@base      = base
-			@file      = NSFileManager.new
-			@m3u       = Hash.new
-			@music     = Music.new
-			@playlists = @app.sources.first.playlists
-			@synced    = Music.new
-			@delete    = Array.new
-			@pnames    = Hash.new
+			@app        = get_app 'com.apple.itunes','itunes'
+			@base       = base
+			@file       = NSFileManager.new
+			@m3u        = Hash.new
+			@music      = Music.new
+			@playlists  = @app.sources.first.playlists
+			@synced     = Music.new
+			@delete     = Array.new
+			@total_size = -1
+			@old_size   = -1
+			@pnames     = Hash.new
+			@selected   = Array.new
 			@playlists.each do |p|
 				@pnames[p.name] = p.size
 			end
@@ -123,7 +125,7 @@ module Sync
 		
 		# Makes the playlist with name
 		def make_playlist_data(p_name)
-			raise NoPlayList unless @pnames.include? p_name
+			raise "No playlist with name #{p_name}" unless @pnames.include? p_name
 			
 			ply = "#EXTM3U\n"
 			@playlists[p_name].tracks.each do |track|
@@ -141,10 +143,12 @@ module Sync
 			end
 			
 			@m3u[p_name] = ply
+			@total_size += @pnames[p_name]
+			@selected   << p_name
 			return self
 		end
 
-		def load_synced(path="#{@base}/sync.yaml")
+		def load_synced(path="#{@base}/_sync.yaml")
 			@synced = 
 				if File.exist?(path)   then
 					File.open(path){|y| YAML.load(y) }
@@ -229,12 +233,17 @@ module Sync
 			return self
 		end
 	
-		def save_synced(path="#{@base}/sync.yaml")
+		def save_synced(path="#{@base}/_sync.yaml")
 			synced =  @synced.size == 0 ? @music : @synced
 			
 			File.open(path, "w") do |file|
 				file.write(synced.to_yaml)
 			end
+			
+			File.open("#{@base}/_prefs", "w") do |file|
+				file.write({total_size:@total_size}.to_yaml);
+			end
+			
 			return self
 		end
 		
@@ -288,6 +297,27 @@ module Sync
 			end
 		end
 		
+		#util
+		def load_pref(file = "#{@base}/_sync_playlists" )
+			raise "No pref @ #{file}" unless File.exists?(file)
+			
+			farr = File.read(file).split("\n")
+			farr.each do |f|
+				if f.length > 0 then
+					make_playlist_data f unless @pnames[f].nil?
+				end
+			end	
+		
+			prefs = 
+			if File.exist?("#{@base}/_prefs")   then
+				 YAML.load_file("#{@base}/_prefs")
+			else 
+				Hash.new
+			end
+			@old_size = prefs[:total_size] || -1
+			
+		end
+		
 		private
 		def mkdir(dir)
 			@file.createDirectoryAtPath(
@@ -302,24 +332,35 @@ module Sync
 
 end
 
-#Main
-include Sync 
+if __FILE__ == $0 then
+	include Sync 
+	itunes = Itunes.new
+	itunes.load_pref
+	
+	file_attributes = NSFileManager.new.fileSystemAttributesAtPath("/")
+	free_space = file_attributes[NSFileSystemFreeSize].longLongValue
+	
+	if (  (ARGV.length > 0 and ARGV[0] == "-i") )
+	
+		puts "Current Size #{itunes.old_size}"
+		puts "New Size     #{itunes.total_size}"
+		puts "free space   #{free_space}"
+		puts "Playlists:"
+		itunes.selected.each do |p|
+			printf " %20s: %d bytes\n", p, itunes.pnames[p]
+		end
+	end
+	
+	itunes.load_synced
+	itunes.find_not_in_playlist
+	itunes.find_unsyced
 
-itunes = Itunes.new
+	# any order 
+	itunes.delete_not_found
+	itunes.write_unsynced
 
-itunes.make_playlist_data "pc [701,2500]"
-itunes.make_playlist_data "↑ "
-
-itunes.load_synced
-itunes.find_not_in_playlist
-itunes.find_unsyced
-
-# any order 
-itunes.delete_not_found
-itunes.write_unsynced
-
-itunes.save_synced
-itunes.make_new_playlist
-itunes.save_m3us
-
+	itunes.save_synced
+	itunes.make_new_playlist
+	itunes.save_m3us
+end
 
