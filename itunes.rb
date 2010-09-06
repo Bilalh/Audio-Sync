@@ -18,6 +18,8 @@ end
 module Sync
 	require 'set'
 	require "yaml"
+	framework 'Cocoa'
+	framework 'ScriptingBridge'
 
 	# gets the app 
 	def get_app(app_id, bridge_name, run = true)
@@ -38,6 +40,10 @@ module Sync
 			val = self[name]
 			return val if val
 			return (self[name] = Music.new)
+		end
+		
+		def add_track(name, full, total_size)
+			
 		end
 		
 		def subtract(hash)
@@ -105,9 +111,14 @@ module Sync
 		attr_reader :app,:delete, :music, :playlists, :pnames, :synced, :selected
 		attr_reader :total_size, :old_size, :base
 		
-		def initialize(base = File.expand_path("~/Desktop/music_t") )
+		def initialize(base)
+			@base       = File.expand_path(base)
+			
+			if ! (File.exist? @base and File.directory? @base) then
+				puts "File '#{@base}' does not exist or not a dir"
+				exit
+			end
 			@app        = get_app 'com.apple.itunes','itunes'
-			@base       = base
 			@file       = NSFileManager.new
 			@m3u        = Hash.new
 			@music      = Music.new
@@ -130,20 +141,24 @@ module Sync
 			ply = "#EXTM3U\n"
 			@playlists[p_name].tracks.each do |track|
 				url   = track.get.location
+				raise "#{track.name} null" if url.nil? 
 				parts = url.pathComponents
 				name  = parts[-1]; album = parts[-2]; artist = parts[-3]
 				full   = "#{artist}/#{album}/#{name}"
 
-				@music.add_artist(artist)
+				m_album =@music.add_artist(artist)
 					.add_album(album)
-					.store(name,full)
+				unless m_album.has_key? name 
+					m_album.store(name,full)
+					@total_size += track.size
+				end 
+				
 
 				ply << "#EXTINF:-1,#{track.name} - #{artist}\n"
 				ply << "../#{full}\n"
 			end
 			
 			@m3u[p_name] = ply
-			@total_size += @pnames[p_name]
 			@selected   << p_name
 			return self
 		end
@@ -159,25 +174,25 @@ module Sync
 		end
 		
 		def find_unsyced(synced = @synced)
-			puts "music" 
-			print_music  @music
-			puts
+			# puts "music" 
+			# print_music  @music
+			# puts
 			
 			temp = @music.merge_music synced
 			@music.minus! synced
 			
 			@synced = temp
-			puts "synced" 
-			print_music temp
-			puts
-			
-			puts "new" 
-			print_music  @music
-			puts
-			
-			puts "delete" 
-			p delete
-			puts
+			# puts "synced" 
+			# print_music temp
+			# puts
+			# 
+			# puts "new" 
+			# print_music  @music
+			# puts
+			# 
+			# puts "delete" 
+			# p delete
+			# puts
 			
 			return self
 		end
@@ -221,8 +236,9 @@ module Sync
 				artist.each_pair do |al, album|
 					mkdir("#{ar}/#{al}")
 					album.each do |name, full|
-						print name, " "
-						puts @file.copyItemAtPath(
+						# print name, " "
+						# puts 
+						@file.copyItemAtPath(
 							"/Users/bilalh/Music/iTunes/iTunes Music/" + full,
 							toPath:full,
 							error:nil
@@ -318,6 +334,30 @@ module Sync
 			
 		end
 		
+		
+		# sorts the groupings and adds a comma after the last one
+		def sort_grouping 
+			@playlists["music"].tracks.each do |track|
+				old = track.grouping
+				if old.length > 0 then
+					arr = old.split(",").each do |e|
+						e.strip!
+					end
+
+					next unless arr.length > 1
+					puts "old #{old}"
+					
+					arr.sort! {|x,y| x.downcase <=> y.downcase }
+
+					neww = arr.join ', '
+					neww << ','
+					puts "new #{neww}"
+
+					track.grouping = neww
+				end
+			end
+		end
+		
 		private
 		def mkdir(dir)
 			@file.createDirectoryAtPath(
@@ -332,35 +372,4 @@ module Sync
 
 end
 
-if __FILE__ == $0 then
-	include Sync 
-	itunes = Itunes.new
-	itunes.load_pref
-	
-	file_attributes = NSFileManager.new.fileSystemAttributesAtPath("/")
-	free_space = file_attributes[NSFileSystemFreeSize].longLongValue
-	
-	if (  (ARGV.length > 0 and ARGV[0] == "-i") )
-	
-		puts "Current Size #{itunes.old_size}"
-		puts "New Size     #{itunes.total_size}"
-		puts "free space   #{free_space}"
-		puts "Playlists:"
-		itunes.selected.each do |p|
-			printf " %20s: %d bytes\n", p, itunes.pnames[p]
-		end
-	end
-	
-	itunes.load_synced
-	itunes.find_not_in_playlist
-	itunes.find_unsyced
-
-	# any order 
-	itunes.delete_not_found
-	itunes.write_unsynced
-
-	itunes.save_synced
-	itunes.make_new_playlist
-	itunes.save_m3us
-end
-
+4
