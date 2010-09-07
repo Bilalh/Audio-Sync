@@ -28,17 +28,21 @@ if __FILE__ == $0 then
 		olds   = itunes.old_size == -1 ? 0 :  itunes.old_size
 		news   = itunes.total_size 
 		afters = (free_space - (olds - news ).abs)
-		puts olds, news, afters
 		puts "Current Size     #{nicer olds }"
 		puts "New Size         #{nicer news}"
 		puts "free space       #{nicer free_space , 4}"
 		puts "free space after #{nicer afters, 4 }"
+		puts "Songs old #{itunes.old_songs}"
+		puts "Songs new #{itunes.old_songs}"
 		puts "Playlists:"
 		itunes.selected.each do |p|
 			printf " %20s: %s\n", p, nicer(itunes.pnames[p])
 		end
 		exit
 	elsif (  (ARGV.length > 1 and ARGV[1] == "-a") )
+		itunes.print_music
+		exit
+	elsif (  (ARGV.length > 1 and ARGV[1] == "-e") )
 		itunes.playlists.each do |p|
 			printf " %-20s: %s\n", p.name, nicer(itunes.pnames[p.name])
 		end	

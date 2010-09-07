@@ -21,7 +21,7 @@ module Sync
 	framework 'Cocoa'
 	framework 'ScriptingBridge'
 
-	# gets the app 
+	# gets the app for scripting
 	def get_app(app_id, bridge_name, run = true)
 		appa = SBApplication.applicationWithBundleIdentifier(app_id)
 		load_bridge_support_file "#{bridge_name}.bridgesupport"
@@ -109,7 +109,7 @@ module Sync
 	
 	class Itunes
 		attr_reader :app,:delete, :music, :playlists, :pnames, :synced, :selected
-		attr_reader :total_size, :old_size, :base
+		attr_reader :total_size, :old_size, :base, :total_songs, :old_songs
 		
 		def initialize(base)
 			@base       = File.expand_path(base)
@@ -118,17 +118,19 @@ module Sync
 				puts "File '#{@base}' does not exist or not a dir"
 				exit
 			end
-			@app        = get_app 'com.apple.itunes','itunes'
-			@file       = NSFileManager.new
-			@m3u        = Hash.new
-			@music      = Music.new
-			@playlists  = @app.sources.first.playlists
-			@synced     = Music.new
-			@delete     = Array.new
-			@total_size = -1
-			@old_size   = -1
-			@pnames     = Hash.new
-			@selected   = Array.new
+			@app         = get_app 'com.apple.itunes','itunes'
+			@file        = NSFileManager.new
+			@m3u         = Hash.new
+			@music       = Music.new
+			@playlists   = @app.sources.first.playlists
+			@synced      = Music.new
+			@delete      = Array.new
+			@total_size  = -1
+			@total_songs = 0
+			@old_size    = -1
+			@old_songs   = -1
+			@pnames      = Hash.new
+			@selected    = Array.new
 			@playlists.each do |p|
 				@pnames[p.name] = p.size
 			end
@@ -150,7 +152,8 @@ module Sync
 					.add_album(album)
 				unless m_album.has_key? name 
 					m_album.store(name,full)
-					@total_size += track.size
+					@total_size  += track.size
+					@total_songs += 1
 				end 
 				
 
@@ -163,6 +166,7 @@ module Sync
 			return self
 		end
 
+		# loads the data on synced songs
 		def load_synced(path="#{@base}/_sync.yaml")
 			@synced = 
 				if File.exist?(path)   then
@@ -173,6 +177,7 @@ module Sync
 			return self
 		end
 		
+		# finds songs that need to be copied
 		def find_unsyced(synced = @synced)
 			# puts "music" 
 			# print_music  @music
@@ -229,6 +234,7 @@ module Sync
 			return self
 		end
 		
+		# write the new song
 		def write_unsynced
 			Dir.chdir(@base)
 			@music.each_pair do |ar, artist|
@@ -249,6 +255,7 @@ module Sync
 			return self
 		end
 	
+		# save data on songs that have been synced
 		def save_synced(path="#{@base}/_sync.yaml")
 			synced =  @synced.size == 0 ? @music : @synced
 			
@@ -257,12 +264,16 @@ module Sync
 			end
 			
 			File.open("#{@base}/_prefs", "w") do |file|
-				file.write({total_size:@total_size}.to_yaml);
+				file.write({
+					total_size: @total_size,
+					total_songs:@total_songs
+				}.to_yaml);
 			end
 			
 			return self
 		end
 		
+		# deletes songs that are not in any of the playlists 
 		def delete_not_found
 			Dir.chdir(@base)
 			@delete.each do |file|
@@ -273,6 +284,7 @@ module Sync
 			end
 		end
 		
+		# makes a playlist all the new songs
 		def make_new_playlist
 			return if @music.size == 0 
 			ply = "#EXTM3U\n"
@@ -291,9 +303,10 @@ module Sync
 			return self
 		end
 		
+		# saves the playlists
 		def save_m3us
-			mkdir("playlists")
-			Dir.chdir("#{@base}/playlists")
+			mkdir("_playlists")
+			Dir.chdir("#{@base}/_playlists")
 			@m3u.each_pair do |name, ply|
 				File.open("#{name}.m3u", "w") do |file|
 					file.write(ply)
@@ -302,9 +315,10 @@ module Sync
 		end
 		
 		def print_music(hash = @music)
+			#TODO sorted
 			hash.each_pair do |name, artist|
 				puts "artist: #{name}"
-				artist.each do |name, album|
+				artist.each_pair do |name, album|
 					puts "  album: #{name}"
 					album.each do |track|
 						puts "     #{track[0]}"
@@ -313,7 +327,6 @@ module Sync
 			end
 		end
 		
-		#util
 		def load_pref(file = "#{@base}/_sync_playlists" )
 			raise "No pref @ #{file}" unless File.exists?(file)
 			
@@ -330,7 +343,8 @@ module Sync
 			else 
 				Hash.new
 			end
-			@old_size = prefs[:total_size] || -1
+			@old_size  = prefs[:total_size]  || -1
+			@old_songs = prefs[:total_songs] || -1
 			
 		end
 		
@@ -371,5 +385,3 @@ module Sync
 	end
 
 end
-
-4
