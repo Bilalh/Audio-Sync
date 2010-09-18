@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>itunes.rb</string>
+	<string>itunes_sync.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -18,21 +18,6 @@
 			<key>sourceDirectory</key>
 			<string></string>
 		</dict>
-		<dict>
-			<key>children</key>
-			<array>
-				<dict>
-					<key>name</key>
-					<string>music_t</string>
-					<key>regexFolderFilter</key>
-					<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
-					<key>sourceDirectory</key>
-					<string>../../../Desktop/music_t</string>
-				</dict>
-			</array>
-			<key>name</key>
-			<string>untitled group</string>
-		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>192</integer>
@@ -43,28 +28,44 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>15</integer>
+				<integer>25</integer>
 				<key>line</key>
-				<integer>310</integer>
+				<integer>110</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>259</integer>
+			<integer>80</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>20</integer>
+				<key>line</key>
+				<integer>110</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>26</integer>
+				<key>line</key>
+				<integer>110</integer>
+			</dict>
 		</dict>
 		<key>itunes_sync.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>6</integer>
+				<integer>9</integer>
 				<key>line</key>
-				<integer>43</integer>
+				<integer>53</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>11</integer>
+			<integer>25</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
@@ -87,6 +88,6 @@
 		</dict>
 	</dict>
 	<key>windowFrame</key>
-	<string>{{603, 47}, {758, 827}}</string>
+	<string>{{324, 55}, {789, 823}}</string>
 </dict>
 </plist>

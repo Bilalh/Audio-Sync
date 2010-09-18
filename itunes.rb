@@ -210,7 +210,7 @@ module Sync
 					artist.each_pair do |al, album|
 						if ( m_al = m_ar[al] ) then
 							album.each do |name, full|
-								unless  m_al[name]
+								unless  m_al[name] 
 									@delete << full
 									album.delete name
 								end
@@ -277,6 +277,7 @@ module Sync
 		def delete_not_found
 			Dir.chdir(@base)
 			@delete.each do |file|
+				next unless file
 				@file.removeItemAtPath(
 					file,
 					error:nil

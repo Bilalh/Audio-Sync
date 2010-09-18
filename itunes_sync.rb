@@ -17,7 +17,7 @@ if __FILE__ == $0 then
 	require "itunes.rb"
 	include Sync 
 	
-	(puts "itunes_sync base_path [-i]"; exit) unless ARGV.length > 0
+	(puts "itunes_sync base_path [-i|-a|-d|-e]"; exit) unless ARGV.length > 0
 	
 	itunes = Itunes.new ARGV[0]
 	itunes.load_pref
@@ -47,15 +47,21 @@ if __FILE__ == $0 then
 			printf " %-20s: %s\n", p.name, nicer(itunes.pnames[p.name])
 		end	
 		exit
+	elsif ( (ARGV.length > 1 and ARGV[1] == "-d") )
+		itunes.find_not_in_playlist
+		puts itunes.delete
+		exit
+	elsif ( ARGV.length > 1 )
+		puts "itunes_sync base_path [-i|-a|-d|-e]"
+		exit
 	end
 	
 	itunes.load_synced
 	itunes.find_not_in_playlist
 	itunes.find_unsyced
-
+	
 	itunes.delete_not_found
 	itunes.write_unsynced
-
 	itunes.save_synced
 	itunes.make_new_playlist
 	itunes.save_m3us
