@@ -1,5 +1,6 @@
 #!/usr/local/bin/macruby
 # encoding: utf-8
+# Bilal Husssain
 framework 'Cocoa'
 framework 'ScriptingBridge'
 

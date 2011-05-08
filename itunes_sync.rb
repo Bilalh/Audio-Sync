@@ -1,6 +1,6 @@
 #!/usr/local/bin/macruby
 # encoding: utf-8
-
+# Bilal Husssain
 
 def nicer(num, dec = 2)
 	sizes = %w{bytes Kb Mb Gb Tb}
