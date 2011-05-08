@@ -55,12 +55,12 @@ module Sync
 		# remove the elements from the other inplace
 		def minus!(other)
 			other.each_pair do |x, o_arist|
-				if  artist = self[x] then
+				if artist = self[x] then
 					o_arist.each_pair do |y, o_album|
-						if album = artist[y] then
+						if album = artist[y] and !album.nil? then
 							album.subtract o_album
 						end
-						artist.delete y if album.size == 0
+						artist.delete y if album.nil? or album.size == 0
 					end
 					self.delete x if artist.size == 0
 				end
@@ -203,6 +203,7 @@ module Sync
 		end
 		
 		# find all songs that are not in any playlist
+		# FIXME rename files, both files are kept  fixed? testing needed
 		def find_not_in_playlist
 			@synced.each_pair do |ar, artist|
 				
@@ -211,7 +212,7 @@ module Sync
 						if ( m_al = m_ar[al] ) then
 							album.each do |name, full|
 								unless  m_al[name] 
-									@delete << full
+									@delete << full if full #gets rid of false
 									album.delete name
 								end
 							end
@@ -234,7 +235,7 @@ module Sync
 			return self
 		end
 		
-		# write the new song
+		# write the new songs
 		def write_unsynced
 			Dir.chdir(@base)
 			@music.each_pair do |ar, artist|
@@ -359,7 +360,8 @@ module Sync
 						e.strip!
 					end
 
-					next unless arr.length > 1
+					next if arr.length == 0 
+					next if arr.length == 1 and arr[0][-1]=","
 					puts "old #{old}"
 					
 					arr.sort! {|x,y| x.downcase <=> y.downcase }

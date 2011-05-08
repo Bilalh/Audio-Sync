@@ -28,6 +28,7 @@ if __FILE__ == $0 then
 		olds   = itunes.old_size == -1 ? 0 :  itunes.old_size
 		news   = itunes.total_size 
 		afters = (free_space - (olds - news ).abs)
+		
 		puts "Current Size     #{nicer olds }"
 		puts "New Size         #{nicer news}"
 		puts "free space       #{nicer free_space , 4}"
@@ -35,9 +36,23 @@ if __FILE__ == $0 then
 		puts "Songs old #{itunes.old_songs}"
 		puts "Songs new #{itunes.old_songs}"
 		puts "Playlists:"
+		
 		itunes.selected.each do |p|
 			printf " %20s: %s\n", p, nicer(itunes.pnames[p])
 		end
+		
+		
+		itunes.load_synced
+		itunes.find_not_in_playlist
+		itunes.find_unsyced
+		
+		puts "Song to delete:"
+		puts itunes.delete
+		puts
+		puts "Song to Add:"
+		itunes.print_music
+		puts
+		
 		exit
 	elsif (  (ARGV.length > 1 and ARGV[1] == "-a") )
 		itunes.print_music
@@ -48,6 +63,7 @@ if __FILE__ == $0 then
 		end	
 		exit
 	elsif ( (ARGV.length > 1 and ARGV[1] == "-d") )
+		itunes.load_synced
 		itunes.find_not_in_playlist
 		puts itunes.delete
 		exit
@@ -65,4 +81,10 @@ if __FILE__ == $0 then
 	itunes.save_synced
 	itunes.make_new_playlist
 	itunes.save_m3us
+	
+	puts "Added"
+	itunes.print_music
+	puts "Deleted"
+	puts itunes.delete
+	
 end
