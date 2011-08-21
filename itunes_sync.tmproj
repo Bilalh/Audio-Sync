@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>itunes.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -20,43 +18,11 @@
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>169</integer>
 	<key>metaData</key>
-	<dict>
-		<key>itunes.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>9</integer>
-				<key>line</key>
-				<integer>276</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>138</integer>
-		</dict>
-		<key>itunes_sync.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>19</integer>
-				<key>line</key>
-				<integer>87</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>itunes.rb</string>
-		<string>itunes_sync.rb</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
-	<true/>
+	<false/>
+	<key>showFileHierarchyPanel</key>
+	<false/>
 	<key>treeState</key>
 	<dict>
 		<key>itunes_sync</key>
@@ -68,6 +34,6 @@
 		</dict>
 	</dict>
 	<key>windowFrame</key>
-	<string>{{671, 67}, {760, 811}}</string>
+	<string>{{442, 166}, {801, 687}}</string>
 </dict>
 </plist>

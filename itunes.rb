@@ -376,6 +376,37 @@ module Sync
 			end
 		end
 		
+		
+		# unused
+		# normalised names and adds d_low to the low bit rate versions
+		def dqsuff
+			names = {} 
+			@playlists["dq"].tracks.each do |track|
+				normalised = track.name.downcase.gsub /\(.*\)/, ""
+				normalised.strip!
+				data = names[normalised]
+				if data.nil? then
+					names[normalised] = {max:track, arr:[track], max_pc:track } 
+					next
+				end
+				data[:arr]<< track 
+				data[:max] = track if track.bitRate > data[:max].bitRate
+				data[:max_pc] = track if track.playedCount > data[:max_pc].playedCount
+			end
+			
+			names.each_pair do |normalised, data|  
+				data[:max_pc] = data[:max]  unless data[:max_pc].playedCount  >=5 
+				data[:arr].each do |t| 
+					if t != data[:max]  then
+						t.grouping += ' d_low,' if t.grouping['d_low,'].nil?
+					end
+					if t != data[:max_pc]  then
+						t.name =  data[:max_pc].name unless t.name == data[:max_pc].name
+					end
+				end
+			end
+		end
+		
 		private
 		def mkdir(dir)
 			@file.createDirectoryAtPath(
@@ -389,3 +420,12 @@ module Sync
 	end
 
 end
+
+# if __FILE__ == $0 then
+# 	require "itunes.rb"
+# 	include Sync
+# 	
+# 	itunes = Itunes.new "."
+# 	itunes.dqsuff
+# 	exit
+# end
