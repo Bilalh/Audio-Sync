@@ -26,6 +26,10 @@ Issues
 ------
 If you change the case of the song e.g The song to, the Song, they might treated as the same song.
 
+Licence
+-------
+[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/ "Full details")
+
 Authors
 -------
 * Bilal Hussain
