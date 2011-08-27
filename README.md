@@ -25,3 +25,7 @@ Options
 Issues
 ------
 If you change the case of the song e.g The song to, the Song, they might treated as the same song.
+
+Authors
+-------
+* Bilal Hussain
