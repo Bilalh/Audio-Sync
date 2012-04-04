@@ -65,7 +65,9 @@ if __FILE__ == $0 then
 			# p rev
 			# puts
 			if !done.include? rev and artist != rev and artists.has_key? rev then
-				puts "#{artist}\t#{rev}"
+				puts "%-32s %-32s" % [artist,rev]
+				puts "%-32d %-32d" % [tracks.length,artists[rev].length]
+				# puts "#{tracks.length}\t#{artists[rev].length}"
 			end
 			done << artist
 		end
