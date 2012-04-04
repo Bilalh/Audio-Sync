@@ -18,6 +18,7 @@ if __FILE__ == $0 then
 	include Sync 
 	
 	(puts "itunes_sync base_path [-i|-a|-d|-e]"; exit) unless ARGV.length > 0
+	puts "Args:#{ARGV}"
 	
 	itunes = Itunes.new ARGV[0]
 	itunes.load_pref
@@ -34,7 +35,7 @@ if __FILE__ == $0 then
 		puts "free space       #{nicer free_space , 4}"
 		puts "free space after #{nicer afters, 4 }"
 		puts "Songs old #{itunes.old_songs}"
-		puts "Songs new #{itunes.old_songs}"
+		puts "Songs new #{itunes.total_songs}"
 		puts "Playlists:"
 		
 		itunes.selected.each do |p|

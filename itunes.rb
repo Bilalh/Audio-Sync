@@ -144,7 +144,7 @@ module Sync
 			ply = "#EXTM3U\n"
 			@playlists[p_name].tracks.each do |track|
 				url   = track.get.location
-				raise "#{track.name} null" if url.nil? 
+				raise "#{track.name} url is null" if url.nil? 
 				parts = url.pathComponents
 				name  = parts[-1]; album = parts[-2]; artist = parts[-3]
 				full   = "#{artist}/#{album}/#{name}"

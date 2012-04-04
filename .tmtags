@@ -1,0 +1,288 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+EQ	iTunes.h	/^@property (copy) NSString *EQ;  \/\/ the name of the EQ preset of the track$/;"	variable	line:361
+EQEnabled	iTunes.h	/^@property BOOL EQEnabled;  \/\/ is the equalizer enabled?$/;"	variable	line:154
+Itunes	itunes.rb	/^	class Itunes$/;"	class	line:111
+Music	itunes.rb	/^	class Music < Hash$/;"	class	line:33
+Object	itunes.rb	/^class Object$/;"	class	line:7
+SBElementArray	itunes.rb	/^class SBElementArray$/;"	class	line:13
+Stats	stats.rb	/^module Stats$/;"	module	line:11
+Sync	itunes.rb	/^module Sync$/;"	module	line:19
+[]	itunes.rb	/^  def [](value)$/;"	method	line:14
+add_album	itunes.rb	/^		def add_album(name)$/;"	method	line:40
+add_artist	itunes.rb	/^		def add_artist(name)$/;"	method	line:34
+add_track	itunes.rb	/^		def add_track(name, full, total_size)$/;"	method	line:46
+address	iTunes.h	/^@property (copy) NSString *address;  \/\/ the URL for this track$/;"	variable	line:433
+album	iTunes.h	/^@property (copy) NSString *album;  \/\/ the album name of the track$/;"	variable	line:339
+albumArtist	iTunes.h	/^@property (copy) NSString *albumArtist;  \/\/ the album artist of the track$/;"	variable	line:340
+albumRating	iTunes.h	/^@property NSInteger albumRating;  \/\/ the rating of the album for this track (0 to 100)$/;"	variable	line:341
+albumRatingKind	iTunes.h	/^@property (readonly) iTunesERtK albumRatingKind;  \/\/ the rating kind of the album rating for this track$/;"	variable	line:342
+artist	iTunes.h	/^@property (copy) NSString *artist;  \/\/ the artist of the CD$/;"	variable	line:278
+artist	iTunes.h	/^@property (copy) NSString *artist;  \/\/ the artist\/source of the track$/;"	variable	line:343
+band1	iTunes.h	/^@property double band1;  \/\/ the equalizer 32 Hz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:236
+band10	iTunes.h	/^@property double band10;  \/\/ the equalizer 16 kHz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:245
+band2	iTunes.h	/^@property double band2;  \/\/ the equalizer 64 Hz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:237
+band3	iTunes.h	/^@property double band3;  \/\/ the equalizer 125 Hz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:238
+band4	iTunes.h	/^@property double band4;  \/\/ the equalizer 250 Hz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:239
+band5	iTunes.h	/^@property double band5;  \/\/ the equalizer 500 Hz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:240
+band6	iTunes.h	/^@property double band6;  \/\/ the equalizer 1 kHz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:241
+band7	iTunes.h	/^@property double band7;  \/\/ the equalizer 2 kHz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:242
+band8	iTunes.h	/^@property double band8;  \/\/ the equalizer 4 kHz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:243
+band9	iTunes.h	/^@property double band9;  \/\/ the equalizer 8 kHz band level (-12.0 dB to +12.0 dB)$/;"	variable	line:244
+bitRate	iTunes.h	/^@property (readonly) NSInteger bitRate;  \/\/ the bit rate of the track (in kbps)$/;"	variable	line:344
+bookmark	iTunes.h	/^@property double bookmark;  \/\/ the bookmark time of the track in seconds$/;"	variable	line:345
+bookmarkable	iTunes.h	/^@property BOOL bookmarkable;  \/\/ is the playback position for this track remembered?$/;"	variable	line:346
+bounds	iTunes.h	/^@property NSRect bounds;  \/\/ the boundary rectangle for the window$/;"	variable	line:467
+bpm	iTunes.h	/^@property NSInteger bpm;  \/\/ the tempo of this track in beats per minute$/;"	variable	line:347
+capacity	iTunes.h	/^@property (readonly) long long capacity;  \/\/ the total size of the source if it has a fixed size$/;"	variable	line:325
+category	iTunes.h	/^@property (copy) NSString *category;  \/\/ the category of the track$/;"	variable	line:348
+closeable	iTunes.h	/^@property (readonly) BOOL closeable;  \/\/ does the window have a close box?$/;"	variable	line:468
+collapseable	iTunes.h	/^@property (readonly) BOOL collapseable;  \/\/ does the window have a collapse (windowshade) box?$/;"	variable	line:469
+collapsed	iTunes.h	/^@property BOOL collapsed;  \/\/ is the window collapsed?$/;"	variable	line:470
+collating	iTunes.h	/^@property (readonly) BOOL collating;  \/\/ Should printed copies be collated?$/;"	variable	line:108
+comment	iTunes.h	/^@property (copy) NSString *comment;  \/\/ freeform notes about the track$/;"	variable	line:349
+compilation	iTunes.h	/^@property BOOL compilation;  \/\/ is this CD a compilation album?$/;"	variable	line:279
+compilation	iTunes.h	/^@property BOOL compilation;  \/\/ is this track from a compilation album?$/;"	variable	line:350
+composer	iTunes.h	/^@property (copy) NSString *composer;  \/\/ the composer of the CD$/;"	variable	line:280
+composer	iTunes.h	/^@property (copy) NSString *composer;  \/\/ the composer of the track$/;"	variable	line:351
+container	iTunes.h	/^@property (copy, readonly) SBObject *container;  \/\/ the container of the item$/;"	variable	line:195
+copies	iTunes.h	/^@property (readonly) NSInteger copies;  \/\/ the number of copies of a document to be printed$/;"	variable	line:107
+currentEQPreset	iTunes.h	/^@property (copy) iTunesEQPreset *currentEQPreset;  \/\/ the currently selected equalizer preset$/;"	variable	line:148
+currentEncoder	iTunes.h	/^@property (copy) iTunesEncoder *currentEncoder;  \/\/ the currently selected encoder (MP3, AIFF, WAV, etc.)$/;"	variable	line:147
+currentPlaylist	iTunes.h	/^@property (copy, readonly) iTunesPlaylist *currentPlaylist;  \/\/ the playlist containing the currently targeted track$/;"	variable	line:149
+currentStreamTitle	iTunes.h	/^@property (copy, readonly) NSString *currentStreamTitle;  \/\/ the name of the current song in the playing stream (provided by streaming server)$/;"	variable	line:150
+currentStreamURL	iTunes.h	/^@property (copy, readonly) NSString *currentStreamURL;  \/\/ the URL of the playing stream or streaming web site (provided by streaming server)$/;"	variable	line:151
+currentTrack	iTunes.h	/^@property (copy, readonly) iTunesTrack *currentTrack;  \/\/ the current targeted track$/;"	variable	line:152
+currentVisual	iTunes.h	/^@property (copy) iTunesVisual *currentVisual;  \/\/  the currently selected visual plug-in$/;"	variable	line:153
+data	iTunes.h	/^@property (copy) NSImage *data;  \/\/ data for this artwork, in the form of a picture$/;"	variable	line:215
+databaseID	iTunes.h	/^@property (readonly) NSInteger databaseID;  \/\/ the common, unique ID for this track. If two tracks in different playlists have the same database ID, they are sharing the same data.$/;"	variable	line:352
+dateAdded	iTunes.h	/^@property (copy, readonly) NSDate *dateAdded;  \/\/ the date the track was added to the playlist$/;"	variable	line:353
+delete_not_found	itunes.rb	/^		def delete_not_found$/;"	method	line:279
+discCount	iTunes.h	/^@property NSInteger discCount;  \/\/ the total number of discs in the source album$/;"	variable	line:355
+discCount	iTunes.h	/^@property NSInteger discCount;  \/\/ the total number of discs in this CD’s album$/;"	variable	line:281
+discNumber	iTunes.h	/^@property NSInteger discNumber;  \/\/ the index of the disc containing this track on the source album$/;"	variable	line:356
+discNumber	iTunes.h	/^@property NSInteger discNumber;  \/\/ the index of this CD disc in the source album$/;"	variable	line:282
+downloaded	iTunes.h	/^@property (readonly) BOOL downloaded;  \/\/ was this artwork downloaded by iTunes?$/;"	variable	line:217
+dqsuff	itunes.rb	/^		def dqsuff$/;"	method	line:382
+duration	iTunes.h	/^@property (readonly) NSInteger duration;  \/\/ the total length of all songs (in seconds)$/;"	variable	line:258
+duration	iTunes.h	/^@property (readonly) double duration;  \/\/ the length of the track in seconds$/;"	variable	line:357
+enabled	iTunes.h	/^@property BOOL enabled;  \/\/ is this track checked for playback?$/;"	variable	line:358
+endingPage	iTunes.h	/^@property (readonly) NSInteger endingPage;  \/\/ the last page of the document to be printed$/;"	variable	line:110
+episodeID	iTunes.h	/^@property (copy) NSString *episodeID;  \/\/ the episode ID of the track$/;"	variable	line:359
+episodeNumber	iTunes.h	/^@property NSInteger episodeNumber;  \/\/ the episode number of the track$/;"	variable	line:360
+errorHandling	iTunes.h	/^@property (readonly) iTunesEnum errorHandling;  \/\/ how errors are handled$/;"	variable	line:113
+faxNumber	iTunes.h	/^@property (copy, readonly) NSString *faxNumber;  \/\/ for fax number$/;"	variable	line:116
+find_not_in_playlist	itunes.rb	/^		def find_not_in_playlist$/;"	method	line:208
+find_unsyced	itunes.rb	/^		def find_unsyced(synced = @synced)$/;"	method	line:182
+finish	iTunes.h	/^@property double finish;  \/\/ the stop time of the track in seconds$/;"	variable	line:362
+fixedIndexing	iTunes.h	/^@property BOOL fixedIndexing;  \/\/ true if all AppleScript track indices should be independent of the play order of the owning playlist.$/;"	variable	line:155
+format	iTunes.h	/^@property (copy, readonly) NSNumber *format;  \/\/ the data format for this piece of artwork$/;"	variable	line:218
+format	iTunes.h	/^@property (copy, readonly) NSString *format;  \/\/ the data format created by the encoder$/;"	variable	line:228
+freeSpace	iTunes.h	/^@property (readonly) long long freeSpace;  \/\/ the free space on the source if it has a fixed size$/;"	variable	line:326
+frontmost	iTunes.h	/^@property BOOL frontmost;  \/\/ is iTunes the frontmost application?$/;"	variable	line:156
+fullScreen	iTunes.h	/^@property BOOL fullScreen;  \/\/ are visuals displayed using the entire screen?$/;"	variable	line:157
+gapless	iTunes.h	/^@property BOOL gapless;  \/\/ is this track from a gapless album?$/;"	variable	line:363
+genre	iTunes.h	/^@property (copy) NSString *genre;  \/\/ the genre of the CD$/;"	variable	line:283
+genre	iTunes.h	/^@property (copy) NSString *genre;  \/\/ the music\/audio genre (category) of the track$/;"	variable	line:364
+get_app	itunes.rb	/^	def get_app(app_id, bridge_name, run = true)$/;"	method	line:26
+grouping	iTunes.h	/^@property (copy) NSString *grouping;  \/\/ the grouping (piece) of the track. Generally used to denote movements within a classical work.$/;"	variable	line:365
+iTunesApplication	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesArtwork	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesAudioCDPlaylist	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesAudioCDTrack	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesBrowserWindow	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesDevicePlaylist	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesDeviceTrack	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesEKnd	iTunes.h	/^enum iTunesEKnd {$/;"	enum	line:11
+iTunesEKnd	iTunes.h	/^typedef enum iTunesEKnd iTunesEKnd;$/;"	typedef	line:16
+iTunesEKndAlbumListing	iTunes.h	/^	iTunesEKndAlbumListing = 'kAlb' \/* a listing of a playlist grouped by album *\/,$/;"	enumerator	line:13
+iTunesEKndCdInsert	iTunes.h	/^	iTunesEKndCdInsert = 'kCDi' \/* a printout of the playlist for jewel case inserts *\/$/;"	enumerator	line:14
+iTunesEKndTrackListing	iTunes.h	/^	iTunesEKndTrackListing = 'kTrk' \/* a basic listing of tracks within a playlist *\/,$/;"	enumerator	line:12
+iTunesEPlS	iTunes.h	/^enum iTunesEPlS {$/;"	enum	line:24
+iTunesEPlS	iTunes.h	/^typedef enum iTunesEPlS iTunesEPlS;$/;"	typedef	line:31
+iTunesEPlSFastForwarding	iTunes.h	/^	iTunesEPlSFastForwarding = 'kPSF',$/;"	enumerator	line:28
+iTunesEPlSPaused	iTunes.h	/^	iTunesEPlSPaused = 'kPSp',$/;"	enumerator	line:27
+iTunesEPlSPlaying	iTunes.h	/^	iTunesEPlSPlaying = 'kPSP',$/;"	enumerator	line:26
+iTunesEPlSRewinding	iTunes.h	/^	iTunesEPlSRewinding = 'kPSR'$/;"	enumerator	line:29
+iTunesEPlSStopped	iTunes.h	/^	iTunesEPlSStopped = 'kPSS',$/;"	enumerator	line:25
+iTunesEQPreset	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesEQWindow	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesERpt	iTunes.h	/^enum iTunesERpt {$/;"	enum	line:33
+iTunesERpt	iTunes.h	/^typedef enum iTunesERpt iTunesERpt;$/;"	typedef	line:38
+iTunesERptAll	iTunes.h	/^	iTunesERptAll = 'kAll'$/;"	enumerator	line:36
+iTunesERptOff	iTunes.h	/^	iTunesERptOff = 'kRpO',$/;"	enumerator	line:34
+iTunesERptOne	iTunes.h	/^	iTunesERptOne = 'kRp1',$/;"	enumerator	line:35
+iTunesERtK	iTunes.h	/^enum iTunesERtK {$/;"	enum	line:93
+iTunesERtK	iTunes.h	/^typedef enum iTunesERtK iTunesERtK;$/;"	typedef	line:97
+iTunesERtKComputed	iTunes.h	/^	iTunesERtKComputed = 'kRtC' \/* iTunes-computed rating *\/$/;"	enumerator	line:95
+iTunesERtKUser	iTunes.h	/^	iTunesERtKUser = 'kRtU' \/* user-specified rating *\/,$/;"	enumerator	line:94
+iTunesESpK	iTunes.h	/^enum iTunesESpK {$/;"	enum	line:69
+iTunesESpK	iTunes.h	/^typedef enum iTunesESpK iTunesESpK;$/;"	typedef	line:83
+iTunesESpKBooks	iTunes.h	/^	iTunesESpKBooks = 'kSpA',$/;"	enumerator	line:71
+iTunesESpKFolder	iTunes.h	/^	iTunesESpKFolder = 'kSpF',$/;"	enumerator	line:72
+iTunesESpKGenius	iTunes.h	/^	iTunesESpKGenius = 'kSpG',$/;"	enumerator	line:73
+iTunesESpKITunesU	iTunes.h	/^	iTunesESpKITunesU = 'kSpU',$/;"	enumerator	line:74
+iTunesESpKLibrary	iTunes.h	/^	iTunesESpKLibrary = 'kSpL',$/;"	enumerator	line:75
+iTunesESpKMovies	iTunes.h	/^	iTunesESpKMovies = 'kSpI',$/;"	enumerator	line:76
+iTunesESpKMusic	iTunes.h	/^	iTunesESpKMusic = 'kSpZ',$/;"	enumerator	line:77
+iTunesESpKNone	iTunes.h	/^	iTunesESpKNone = 'kNon',$/;"	enumerator	line:70
+iTunesESpKPartyShuffle	iTunes.h	/^	iTunesESpKPartyShuffle = 'kSpS',$/;"	enumerator	line:78
+iTunesESpKPodcasts	iTunes.h	/^	iTunesESpKPodcasts = 'kSpP',$/;"	enumerator	line:79
+iTunesESpKPurchasedMusic	iTunes.h	/^	iTunesESpKPurchasedMusic = 'kSpM',$/;"	enumerator	line:80
+iTunesESpKTVShows	iTunes.h	/^	iTunesESpKTVShows = 'kSpT'$/;"	enumerator	line:81
+iTunesESrA	iTunes.h	/^enum iTunesESrA {$/;"	enum	line:59
+iTunesESrA	iTunes.h	/^typedef enum iTunesESrA iTunesESrA;$/;"	typedef	line:67
+iTunesESrAAlbums	iTunes.h	/^	iTunesESrAAlbums = 'kSrL' \/* albums only *\/,$/;"	enumerator	line:60
+iTunesESrAAll	iTunes.h	/^	iTunesESrAAll = 'kAll' \/* all text fields *\/,$/;"	enumerator	line:61
+iTunesESrAArtists	iTunes.h	/^	iTunesESrAArtists = 'kSrR' \/* artists only *\/,$/;"	enumerator	line:62
+iTunesESrAComposers	iTunes.h	/^	iTunesESrAComposers = 'kSrC' \/* composers only *\/,$/;"	enumerator	line:63
+iTunesESrADisplayed	iTunes.h	/^	iTunesESrADisplayed = 'kSrV' \/* visible text fields *\/,$/;"	enumerator	line:64
+iTunesESrASongs	iTunes.h	/^	iTunesESrASongs = 'kSrS' \/* song names only *\/$/;"	enumerator	line:65
+iTunesESrc	iTunes.h	/^enum iTunesESrc {$/;"	enum	line:47
+iTunesESrc	iTunes.h	/^typedef enum iTunesESrc iTunesESrc;$/;"	typedef	line:57
+iTunesESrcAudioCD	iTunes.h	/^	iTunesESrcAudioCD = 'kACD',$/;"	enumerator	line:50
+iTunesESrcDevice	iTunes.h	/^	iTunesESrcDevice = 'kDev',$/;"	enumerator	line:52
+iTunesESrcIPod	iTunes.h	/^	iTunesESrcIPod = 'kPod',$/;"	enumerator	line:49
+iTunesESrcLibrary	iTunes.h	/^	iTunesESrcLibrary = 'kLib',$/;"	enumerator	line:48
+iTunesESrcMP3CD	iTunes.h	/^	iTunesESrcMP3CD = 'kMCD',$/;"	enumerator	line:51
+iTunesESrcRadioTuner	iTunes.h	/^	iTunesESrcRadioTuner = 'kTun',$/;"	enumerator	line:53
+iTunesESrcSharedLibrary	iTunes.h	/^	iTunesESrcSharedLibrary = 'kShd',$/;"	enumerator	line:54
+iTunesESrcUnknown	iTunes.h	/^	iTunesESrcUnknown = 'kUnk'$/;"	enumerator	line:55
+iTunesEVSz	iTunes.h	/^enum iTunesEVSz {$/;"	enum	line:40
+iTunesEVSz	iTunes.h	/^typedef enum iTunesEVSz iTunesEVSz;$/;"	typedef	line:45
+iTunesEVSzLarge	iTunes.h	/^	iTunesEVSzLarge = 'kVSL'$/;"	enumerator	line:43
+iTunesEVSzMedium	iTunes.h	/^	iTunesEVSzMedium = 'kVSM',$/;"	enumerator	line:42
+iTunesEVSzSmall	iTunes.h	/^	iTunesEVSzSmall = 'kVSS',$/;"	enumerator	line:41
+iTunesEVdK	iTunes.h	/^enum iTunesEVdK {$/;"	enum	line:85
+iTunesEVdK	iTunes.h	/^typedef enum iTunesEVdK iTunesEVdK;$/;"	typedef	line:91
+iTunesEVdKMovie	iTunes.h	/^	iTunesEVdKMovie = 'kVdM' \/* movie track *\/,$/;"	enumerator	line:87
+iTunesEVdKMusicVideo	iTunes.h	/^	iTunesEVdKMusicVideo = 'kVdV' \/* music video track *\/,$/;"	enumerator	line:88
+iTunesEVdKNone	iTunes.h	/^	iTunesEVdKNone = 'kNon' \/* not a video or unknown video kind *\/,$/;"	enumerator	line:86
+iTunesEVdKTVShow	iTunes.h	/^	iTunesEVdKTVShow = 'kVdT' \/* TV show track *\/$/;"	enumerator	line:89
+iTunesEncoder	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesEnum	iTunes.h	/^enum iTunesEnum {$/;"	enum	line:18
+iTunesEnum	iTunes.h	/^typedef enum iTunesEnum iTunesEnum;$/;"	typedef	line:22
+iTunesEnumDetailed	iTunes.h	/^	iTunesEnumDetailed = 'lwdt' \/* print a detailed report of PostScript errors *\/$/;"	enumerator	line:20
+iTunesEnumStandard	iTunes.h	/^	iTunesEnumStandard = 'lwst' \/* Standard PostScript error handling *\/,$/;"	enumerator	line:19
+iTunesFileTrack	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesFolderPlaylist	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesItem	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesLibraryPlaylist	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesPlaylist	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesPlaylistWindow	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesRadioTunerPlaylist	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesSharedTrack	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesSource	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesTrack	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesURLTrack	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesUserPlaylist	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesVisual	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+iTunesWindow	iTunes.h	/^@class iTunesPrintSettings, iTunesApplication, iTunesItem, iTunesArtwork, iTunesEncoder, iTunesEQPreset, iTunesPlaylist, iTunesAudioCDPlaylist, iTunesDevicePlaylist, iTunesLibraryPlaylist, iTunesRadioTunerPlaylist, iTunesSource, iTunesTrack, iTunesAudioCDTrack, iTunesDeviceTrack, iTunesFileTrack, iTunesSharedTrack, iTunesURLTrack, iTunesUserPlaylist, iTunesFolderPlaylist, iTunesVisual, iTunesWindow, iTunesBrowserWindow, iTunesEQWindow, iTunesPlaylistWindow;$/;"	variable	line:9
+index	iTunes.h	/^@property (readonly) NSInteger index;  \/\/ The index of the item in internal application order.$/;"	variable	line:197
+initialize	itunes.rb	/^		def initialize(base)$/;"	method	line:115
+kind	iTunes.h	/^@property (copy, readonly) NSString *kind;  \/\/ a text description of the track$/;"	variable	line:366
+kind	iTunes.h	/^@property (readonly) iTunesESrc kind;$/;"	variable	line:327
+kind	iTunes.h	/^@property NSInteger kind;  \/\/ kind or purpose of this piece of artwork$/;"	variable	line:219
+load_pref	itunes.rb	/^		def load_pref(file = "#{@base}\/_sync_playlists" )$/;"	method	line:333
+load_synced	itunes.rb	/^		def load_synced(path="#{@base}\/_sync.yaml")$/;"	method	line:171
+location	iTunes.h	/^@property (copy) NSURL *location;  \/\/ the location of the file represented by this track$/;"	variable	line:418
+location	iTunes.h	/^@property (copy, readonly) NSURL *location;  \/\/ the location of the file represented by this track$/;"	variable	line:404
+longDescription	iTunes.h	/^@property (copy) NSString *longDescription;$/;"	variable	line:367
+lyrics	iTunes.h	/^@property (copy) NSString *lyrics;  \/\/ the lyrics of the track$/;"	variable	line:368
+make_new_playlist	itunes.rb	/^		def make_new_playlist$/;"	method	line:291
+make_playlist_data	itunes.rb	/^		def make_playlist_data(p_name)$/;"	method	line:141
+make_tracks_yaml	stats.rb	/^	def make_tracks_yaml(tracks)$/;"	method	line:33
+make_years	stats.rb	/^	def make_years$/;"	method	line:26
+merge_music	itunes.rb	/^		def merge_music(other)$/;"	method	line:84
+minimized	iTunes.h	/^@property BOOL minimized;  \/\/ is the small EQ window visible?$/;"	variable	line:493
+minimized	iTunes.h	/^@property BOOL minimized;  \/\/ is the small player visible?$/;"	variable	line:483
+minus!	itunes.rb	/^		def minus!(other)$/;"	method	line:57
+mkdir	itunes.rb	/^		def mkdir(dir)$/;"	method	line:411
+modifiable	iTunes.h	/^@property (readonly) BOOL modifiable;  \/\/ can this preset be modified?$/;"	variable	line:246
+modificationDate	iTunes.h	/^@property (copy, readonly) NSDate *modificationDate;  \/\/ the modification date of the content of this track$/;"	variable	line:369
+mute	iTunes.h	/^@property BOOL mute;  \/\/ has the sound output been muted?$/;"	variable	line:159
+my_methods	itunes.rb	/^	def my_methods()$/;"	method	line:8
+name	iTunes.h	/^@property (copy) NSString *name;  \/\/ the name of the item$/;"	variable	line:198
+name	iTunes.h	/^@property (copy) NSString *name;  \/\/ the name of the playlist$/;"	variable	line:259
+name	iTunes.h	/^@property (copy, readonly) NSString *name;  \/\/ the name of the application$/;"	variable	line:158
+name_array_to_string	check_artists.rb	/^def name_array_to_string dst, sep=', '$/;"	method	line:26
+nicer	itunes_sync.rb	/^def nicer(num, dec = 2)$/;"	method	line:5
+objectDescription	iTunes.h	/^@property (copy) NSString *objectDescription;  \/\/ description of artwork as a string$/;"	variable	line:216
+objectDescription	iTunes.h	/^@property (copy) NSString *objectDescription;  \/\/ the description of the track$/;"	variable	line:354
+pagesAcross	iTunes.h	/^@property (readonly) NSInteger pagesAcross;  \/\/ number of logical pages laid across a physical page$/;"	variable	line:111
+pagesDown	iTunes.h	/^@property (readonly) NSInteger pagesDown;  \/\/ number of logical pages laid out down a physical page$/;"	variable	line:112
+parent	iTunes.h	/^@property (copy, readonly) iTunesPlaylist *parent;  \/\/ folder which contains this playlist (if any)$/;"	variable	line:260
+persistentID	iTunes.h	/^@property (copy, readonly) NSString *persistentID;  \/\/ the id of the item as a hexidecimal string. This id does not change over time.$/;"	variable	line:199
+playedCount	iTunes.h	/^@property NSInteger playedCount;  \/\/ number of times this track has been played$/;"	variable	line:370
+playedDate	iTunes.h	/^@property (copy) NSDate *playedDate;  \/\/ the date and time this track was last played$/;"	variable	line:371
+playerPosition	iTunes.h	/^@property NSInteger playerPosition;  \/\/ the player’s position within the currently playing track in seconds.$/;"	variable	line:160
+playerState	iTunes.h	/^@property (readonly) iTunesEPlS playerState;  \/\/ is iTunes stopped, paused, or playing?$/;"	variable	line:161
+podcast	iTunes.h	/^@property (readonly) BOOL podcast;  \/\/ is this track a podcast episode?$/;"	variable	line:372
+position	iTunes.h	/^@property NSPoint position;  \/\/ the upper left position of the window$/;"	variable	line:471
+preamp	iTunes.h	/^@property double preamp;  \/\/ the equalizer preamp level (-12.0 dB to +12.0 dB)$/;"	variable	line:247
+print_music	itunes.rb	/^		def print_music$/;"	method	line:71
+print_music	itunes.rb	/^		def print_music(hash = @music)$/;"	method	line:320
+printerFeatures	iTunes.h	/^@property (copy, readonly) NSArray *printerFeatures;  \/\/ printer specific options$/;"	variable	line:115
+rating	iTunes.h	/^@property NSInteger rating;  \/\/ the rating of this track (0 to 100)$/;"	variable	line:373
+ratingKind	iTunes.h	/^@property (readonly) iTunesERtK ratingKind;  \/\/ the rating kind of this track$/;"	variable	line:374
+rawData	iTunes.h	/^@property (copy) NSData *rawData;  \/\/ data for this artwork, in original format$/;"	variable	line:220
+releaseDate	iTunes.h	/^@property (copy, readonly) NSDate *releaseDate;  \/\/ the release date of this track$/;"	variable	line:375
+requestedPrintTime	iTunes.h	/^@property (copy, readonly) NSDate *requestedPrintTime;  \/\/ the time at which the desktop printer should print the document$/;"	variable	line:114
+resizable	iTunes.h	/^@property (readonly) BOOL resizable;  \/\/ is the window resizable?$/;"	variable	line:472
+sampleRate	iTunes.h	/^@property (readonly) NSInteger sampleRate;  \/\/ the sample rate of the track (in Hz)$/;"	variable	line:376
+save_m3us	itunes.rb	/^		def save_m3us$/;"	method	line:310
+save_synced	itunes.rb	/^		def save_synced(path="#{@base}\/_sync.yaml")$/;"	method	line:261
+seasonNumber	iTunes.h	/^@property NSInteger seasonNumber;  \/\/ the season number of the track$/;"	variable	line:377
+selection	iTunes.h	/^@property (copy, readonly) SBObject *selection;  \/\/ the selected songs$/;"	variable	line:484
+selection	iTunes.h	/^@property (copy, readonly) SBObject *selection;  \/\/ the selected songs$/;"	variable	line:501
+selection	iTunes.h	/^@property (copy, readonly) SBObject *selection;  \/\/ the selection visible to the user$/;"	variable	line:162
+shared	iTunes.h	/^@property BOOL shared;  \/\/ is this playlist shared?$/;"	variable	line:446
+show	iTunes.h	/^@property (copy) NSString *show;  \/\/ the show name of the track$/;"	variable	line:381
+shufflable	iTunes.h	/^@property BOOL shufflable;  \/\/ is this track included when shuffling?$/;"	variable	line:378
+shuffle	iTunes.h	/^@property BOOL shuffle;  \/\/ play the songs in this playlist in random order?$/;"	variable	line:261
+size	iTunes.h	/^@property (readonly) NSInteger size;  \/\/ the size of the track (in bytes)$/;"	variable	line:388
+size	iTunes.h	/^@property (readonly) long long size;  \/\/ the total size of all songs (in bytes)$/;"	variable	line:262
+skippedCount	iTunes.h	/^@property NSInteger skippedCount;  \/\/ number of times this track has been skipped$/;"	variable	line:379
+skippedDate	iTunes.h	/^@property (copy) NSDate *skippedDate;  \/\/ the date and time this track was last skipped$/;"	variable	line:380
+smart	iTunes.h	/^@property (readonly) BOOL smart;  \/\/ is this a Smart Playlist?$/;"	variable	line:447
+songRepeat	iTunes.h	/^@property iTunesERpt songRepeat;  \/\/ playback repeat mode$/;"	variable	line:263
+sortAlbum	iTunes.h	/^@property (copy) NSString *sortAlbum;  \/\/ override string to use for the track when sorting by album$/;"	variable	line:382
+sortAlbumArtist	iTunes.h	/^@property (copy) NSString *sortAlbumArtist;  \/\/ override string to use for the track when sorting by album artist$/;"	variable	line:384
+sortArtist	iTunes.h	/^@property (copy) NSString *sortArtist;  \/\/ override string to use for the track when sorting by artist$/;"	variable	line:383
+sortComposer	iTunes.h	/^@property (copy) NSString *sortComposer;  \/\/ override string to use for the track when sorting by composer$/;"	variable	line:386
+sortName	iTunes.h	/^@property (copy) NSString *sortName;  \/\/ override string to use for the track when sorting by name$/;"	variable	line:385
+sortShow	iTunes.h	/^@property (copy) NSString *sortShow;  \/\/ override string to use for the track when sorting by show name$/;"	variable	line:387
+sort_grouping	itunes.rb	/^		def sort_grouping $/;"	method	line:356
+soundVolume	iTunes.h	/^@property NSInteger soundVolume;  \/\/ the sound output volume (0 = minimum, 100 = maximum)$/;"	variable	line:163
+specialKind	iTunes.h	/^@property (readonly) iTunesESpK specialKind;  \/\/ special playlist kind$/;"	variable	line:264
+start	iTunes.h	/^@property double start;  \/\/ the start time of the track in seconds$/;"	variable	line:389
+startingPage	iTunes.h	/^@property (readonly) NSInteger startingPage;  \/\/ the first page of the document to be printed$/;"	variable	line:109
+subtract	itunes.rb	/^		def subtract(hash)$/;"	method	line:50
+swap_first_and_last_name	check_artists.rb	/^def swap_first_and_last_name name$/;"	method	line:5
+swap_first_and_last_name_arr	check_artists.rb	/^def swap_first_and_last_name_arr arr$/;"	method	line:10
+targetPrinter	iTunes.h	/^@property (copy, readonly) NSString *targetPrinter;  \/\/ for target printer$/;"	variable	line:117
+time	iTunes.h	/^@property (copy, readonly) NSString *time;  \/\/ the length of all songs in MM:SS format$/;"	variable	line:265
+time	iTunes.h	/^@property (copy, readonly) NSString *time;  \/\/ the length of the track in MM:SS format$/;"	variable	line:390
+trackCount	iTunes.h	/^@property NSInteger trackCount;  \/\/ the total number of tracks on the source album$/;"	variable	line:391
+trackNumber	iTunes.h	/^@property NSInteger trackNumber;  \/\/ the index of the track on the source album$/;"	variable	line:392
+unplayed	iTunes.h	/^@property BOOL unplayed;  \/\/ is this track unplayed?$/;"	variable	line:393
+updateTracks	iTunes.h	/^@property BOOL updateTracks;  \/\/ should tracks which refer to this preset be updated when the preset is renamed or deleted?$/;"	variable	line:248
+version	iTunes.h	/^@property (copy, readonly) NSString *version;  \/\/ the version of iTunes$/;"	variable	line:164
+videoKind	iTunes.h	/^@property iTunesEVdK videoKind;  \/\/ kind of video track$/;"	variable	line:394
+view	iTunes.h	/^@property (copy) iTunesPlaylist *view;  \/\/ the playlist currently displayed in the window$/;"	variable	line:485
+view	iTunes.h	/^@property (copy, readonly) iTunesPlaylist *view;  \/\/ the playlist displayed in the window$/;"	variable	line:502
+visible	iTunes.h	/^@property (readonly) BOOL visible;  \/\/ is this playlist visible in the Source list?$/;"	variable	line:266
+visible	iTunes.h	/^@property BOOL visible;  \/\/ is the window visible?$/;"	variable	line:473
+visualSize	iTunes.h	/^@property iTunesEVSz visualSize;  \/\/ the size of the displayed visual$/;"	variable	line:166
+visualsEnabled	iTunes.h	/^@property BOOL visualsEnabled;  \/\/ are visuals currently being displayed?$/;"	variable	line:165
+volumeAdjustment	iTunes.h	/^@property NSInteger volumeAdjustment;  \/\/ relative volume adjustment of the track (-100% to 100%)$/;"	variable	line:395
+write_tracks_yaml	stats.rb	/^	def write_tracks_yaml data$/;"	method	line:47
+write_unsynced	itunes.rb	/^		def write_unsynced$/;"	method	line:240
+year	iTunes.h	/^@property NSInteger year;  \/\/ the year the album was recorded\/released$/;"	variable	line:284
+year	iTunes.h	/^@property NSInteger year;  \/\/ the year the track was recorded\/released$/;"	variable	line:396
+zoomable	iTunes.h	/^@property (readonly) BOOL zoomable;  \/\/ is the window zoomable?$/;"	variable	line:474
+zoomed	iTunes.h	/^@property BOOL zoomed;  \/\/ is the window zoomed?$/;"	variable	line:475
